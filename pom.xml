@@ -18,9 +18,9 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.fullstack</groupId>
-			<artifactId>marvel-api-client</artifactId>
-			<version>0.0.1</version>
+			<groupId>com.fixmarvel</groupId>
+			<artifactId>client-marvel</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
