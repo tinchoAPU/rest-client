@@ -16,4 +16,8 @@ public class Log {
     String endpoint;
     Date date;
 
+    public Log(Date date, String endpoint) {
+        this.date = date;
+        this.endpoint = endpoint;
+    }
 }

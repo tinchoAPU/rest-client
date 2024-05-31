@@ -25,7 +25,7 @@ public class LogController {
     }
 
     @PostMapping
-    public Log saveLog(Log log){
+    public Log saveLog(@RequestBody Log log){
         return this.logService.saveLog(log);
     }
 

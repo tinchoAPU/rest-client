@@ -4,18 +4,19 @@ import com.api_rest.rest_client.entity.Log;
 import com.fullstack.marvel_api_client.apiClient.MarvenApiClient;
 import com.fullstack.marvel_api_client.dto.CharacterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class MarvelService {
-    LogService logService;
+    private LogService logService;
 
-    MarvenApiClient apiMarvelService;
+    private MarvenApiClient apiMarvelService;
+
+    static final String FIND_ONE_SERVICE = "findCharacterById";
+    static final String FIND_ALL_SERVICE = "findAllCharacters";
 
     @Autowired
     MarvelService(LogService logService) {
@@ -24,21 +25,15 @@ public class MarvelService {
     }
 
     public List<CharacterDTO> findAllCharacters() {
-        Log log = new Log();
-        log.setEndpoint("findAllCharacters");
-        log.setDate(new Date());
         List<CharacterDTO> characters = apiMarvelService.getAllCharacters();
-        logService.saveLog(log);
+        logService.saveLog(new Log(new Date(), FIND_ALL_SERVICE));
         return characters;
     }
 
     public CharacterDTO findCharacterById(Long id) {
-        Log log = new Log();
-        log.setEndpoint("findCharacterById");
-        log.setDate(new Date());
-
         CharacterDTO character = apiMarvelService.getCharacterById(id);
-        logService.saveLog(log);
+        logService.saveLog(new Log(new Date(), FIND_ONE_SERVICE));
         return character;
     }
+
 }

@@ -2,7 +2,6 @@ package com.api_rest.rest_client.service;
 
 import com.api_rest.rest_client.entity.Log;
 import com.api_rest.rest_client.repository.LogRepository;
-import com.fullstack.marvel_api_client.dto.CharacterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +10,7 @@ import java.util.List;
 @Service
 public class LogService {
 
-    LogRepository logRepository;
+    private LogRepository logRepository;
     @Autowired
     LogService(LogRepository logRepository){
         this.logRepository = logRepository;
