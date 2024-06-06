@@ -20,4 +20,7 @@ public class Log {
         this.date = date;
         this.endpoint = endpoint;
     }
+
+    public Log() {
+    }
 }

@@ -28,4 +28,9 @@ public class MarvelController {
     public Object getCharacterById(@PathVariable("characterId") Long characterId) {
         return marvelService.findCharacterById(characterId);
     }
+
+    @GetMapping("/harcoded")
+    public Object getCharacterByIdHarcoded() {
+        return marvelService.findCharacterByIdHarcoded();
+    }
 }

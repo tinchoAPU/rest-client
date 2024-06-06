@@ -36,4 +36,10 @@ public class MarvelService {
         return character;
     }
 
+    public CharacterDTO findCharacterByIdHarcoded() {
+        CharacterDTO character = apiMarvelService.getCharacterByIdHarcoded();
+        logService.saveLog(new Log(new Date(), FIND_ONE_SERVICE));
+        return character;
+    }
+
 }
